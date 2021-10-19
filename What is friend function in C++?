@@ -1,0 +1,20 @@
+class Circle{
+   double radius;
+    
+   public:
+      friend void printradius( Circle c );
+  };
+void printradius(Circle c ) {
+   /* Because printradius() is a friend of Circle, it can
+   directly access any member of this class */
+   cout << "Radius of circle: " << c.width;
+}
+ 
+int main() {
+   Circle c;
+  
+   // Use friend function to print the radius.
+   printradius( c);
+  
+   return 0;
+}
