@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+ 
+class Base_Class {
+   public:
+    virtual void print_msg() {
+        cout << "Base";
+    }
+};
+ 
+class Derived_Class : public Base_Class {
+   public:
+    void print_msg() {
+        cout << "Derived";
+    }
+};
