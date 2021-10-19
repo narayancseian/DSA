@@ -1,0 +1,26 @@
+Reason: Accessing an address that is freed 
+int* p = malloc(8); 
+*p = 100; 
+       
+ free(p);       
+ *p = 110; 
+       
+Solution: Before freeing the pointer check the assignment or any operation required to perform.
+ 
+Reason: Accessing out of array index bounds
+int arr[2]; 
+arr[3] = 10;  
+Solution: Correcting the array bound
+ 
+Reason: Improper use of scanf()
+int n = 2; 
+scanf("%d",n); 
+Solution: To avoid this is the only solution
+ 
+Reason: Dereferencing uninitialized pointer
+int *p; 
+printf("%d",*p);
+Solution: A pointer must point to valid memory before accessing it.
+ 
+Reason: Stack Overflow
+Solution: It can be resolved by having a base condition to return from the recursive function.
