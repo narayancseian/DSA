@@ -1,0 +1,21 @@
+#include <iostream> 
+#include <iterator> 
+#include <map> 
+   
+using namespace std; 
+   
+int main() 
+{
+    map<int, int> test; 
+   
+    // inserting elements 
+    test.insert(pair<int, int>(1, 2)); 
+    test.insert(pair<int, int>(2, 3)); 
+ 
+    map<int, int>::iterator itr; 
+    for (itr = test.begin(); itr != test.end(); ++itr) { 
+        cout << itr->first 
+        cout << itr->second << '\n'; 
+    } 
+ return 0;
+)
