@@ -1,19 +1,29 @@
-#include<iostream>
-using namespace std;
+#include <iostream>
 
-int main()
-{
-    int a[] = {23,6,328,34,12,234,9,23,4,54};
-    int largest = a[0];
-    int smallest = a[0];
+int main() {
+    int arr[] = {4, 2, 9, 5, 1, 7, 8};
+    int n = sizeof(arr) / sizeof(arr[0]);
 
-    for(int i=0;i<10;i++)
-    {
-        if(a[i]>largest)
-            largest = a[i];
-        if(a[i]<smallest)
-            smallest = a[i];
+    if (n == 0) {
+        std::cout << "The array is empty." << std::endl;
+        return 1;
     }
-    cout << "Largest "<<largest<<"\nSmallest "<<smallest<<"\n";
+
+    int minElement = arr[0];
+    int maxElement = arr[0];
+
+    for (int i = 1; i < n; ++i) {
+        if (arr[i] < minElement) {
+            minElement = arr[i];
+        }
+        if (arr[i] > maxElement) {
+            maxElement = arr[i];
+        }
+    }
+
+    std::cout << "Smallest element: " << minElement << std::endl;
+    std::cout << "Largest element: " << maxElement << std::endl;
+
     return 0;
-}								
+}
+								
