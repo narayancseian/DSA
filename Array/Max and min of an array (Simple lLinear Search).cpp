@@ -1,50 +1,28 @@
-#include<bits/stdc++.h>
-using namespace std;
+#include <iostream>
 
-struct Pair{
-	int min;
-	int max;
-};
-
-struct Pair getMinMax(int a[], int n) {
-	struct Pair minmax;
-	int i;
-	
-	if(n==1) {
-		minmax.min = a[0];
-		minmax.max = a[0];
-	}
-	
-	if(a[0] > a[1]) {
-		minmax.min = a[1];
-		minmax.max = a[0];
-	}
-	else {
-		minmax.min = a[0];
-		minmax.max = a[1];
-	}
-	
-	for(int i = 2; i < n; i++) {
-		if(a[i] > minmax.max) 
-		minmax.max = a[i];
-		
-		else if(a[i] < minmax.min)
-		minmax.min = a[i];
-	}
-	return minmax;
-}
 int main() {
-	int n;
-	cin>>n;
-	int a[n];
-	for(int i = 0; i < n; i++)
-	cin>>a[i];
-	
-	struct Pair minmax = getMinMax(a, n);
-	
-	cout<<"Minimum element is "<<minmax.min<<endl;
-	
-	cout<<"Maximum element is "<<minmax.max<<endl;
-	
-	return 0;
+    int arr[] = {4, 2, 9, 5, 1, 7, 8};
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    if (n == 0) {
+        std::cout << "The array is empty." << std::endl;
+        return 1;
+    }
+
+    int minElement = arr[0];
+    int maxElement = arr[0];
+
+    for (int i = 1; i < n; ++i) {
+        if (arr[i] < minElement) {
+            minElement = arr[i];
+        }
+        if (arr[i] > maxElement) {
+            maxElement = arr[i];
+        }
+    }
+
+    std::cout << "Smallest element: " << minElement << std::endl;
+    std::cout << "Largest element: " << maxElement << std::endl;
+
+    return 0;
 }
